@@ -20,7 +20,10 @@
 <body>
     <div id="app">
         <div class="header">
-           
+            <a v-if="page === 'cart'" v-on:click="navigateTo('products')">View Products</a>
+            <a v-if="page === 'products'" v-on:click="navigateTo('cart')">View Cart <sup>{{cartCount}}</a>
+            <a v-if="page === 'checkout'" v-on:click="navigateTo('cart')">Back to Cart</a>
+
             <button  style="width: 30%; color: black;" v-if="page === 'cart'" v-on:click="checkoutCart">Checkout</button>
         </div>
         <!-- Products -->
